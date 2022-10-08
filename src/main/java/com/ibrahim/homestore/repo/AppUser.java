@@ -1,0 +1,18 @@
+package com.ibrahim.homestore.repo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class AppUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+}
