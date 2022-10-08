@@ -1,16 +1,17 @@
-package com.ibrahim.homestore.repo;
+package com.ibrahim.homestore.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Address {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -18,18 +19,16 @@ public class Address {
 
     private String title;
 
-    private String street;
+    private String description;
 
-    private String neighborhood;
-
-    private String province;
-
-    private String city;
-
-    private String apartmentNo;
-
-    private String floor;
+    @ElementCollection
+    private List<String> photos;
 
     @ManyToOne
-    private AppUser userId;
+    private Category category;
+
+    @ManyToOne
+    private SubCategory subCategory;
+
+    private String barcode;
 }

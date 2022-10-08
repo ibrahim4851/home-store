@@ -1,4 +1,4 @@
-package com.ibrahim.homestore.repo;
+package com.ibrahim.homestore.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

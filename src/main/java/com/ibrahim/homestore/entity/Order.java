@@ -1,4 +1,4 @@
-package com.ibrahim.homestore.repo;
+package com.ibrahim.homestore.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,25 +6,26 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SellerProduct {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
-    private Product product;
+    private String status;
 
-    @ManyToMany
-    private List<AppUser> appUser;
+    private BigDecimal totalPrice;
 
-    private int stockCount;
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
-    private BigDecimal price;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private AppUser user;
 }
