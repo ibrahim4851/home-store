@@ -30,5 +30,7 @@ public class Product {
     @ManyToOne
     private SubCategory subCategory;
 
+    private String status;
+
     private String barcode;
 }

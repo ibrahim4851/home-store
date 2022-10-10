@@ -10,12 +10,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "username"),
-                @UniqueConstraint(columnNames = "email")
-        })
-public class AppUser {
+public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -27,5 +22,12 @@ public class AppUser {
 
     private String surname;
 
-    private String phoneNumber;
+    private String storeName;
+
+    private String city;
+
+    private String province;
+
+    private String shippingCompany;
+
 }
