@@ -15,6 +15,7 @@ import javax.persistence.*;
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
         })
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
