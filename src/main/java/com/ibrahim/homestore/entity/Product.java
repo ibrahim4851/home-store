@@ -33,4 +33,6 @@ public class Product {
     private String status;
 
     private String barcode;
+
+    private Double rating;
 }
