@@ -12,7 +12,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "users",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
         })
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -22,6 +21,7 @@ public class AppUser {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "email")
     private String email;
 
     private String name;
