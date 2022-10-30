@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -30,6 +32,7 @@ public class Address {
 
     private String floor;
 
-    @ManyToOne
-    private AppUser userId;
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "appuserid", referencedColumnName = "id")
+    private AppUser appUser;
 }

@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -21,7 +23,7 @@ public class Order {
 
     private BigDecimal totalPrice;
 
-    @OneToOne
+    @OneToOne(fetch = LAZY)
     @JoinColumn(name = "address_id")
     private Address address;
 

@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.FetchType.EAGER;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -20,8 +22,9 @@ public class CartContent {
     @OneToOne
     private AppUser user;
 
-    @OneToMany
-    private List<SellerProduct> products;
+    @ManyToMany(fetch = EAGER)
+    @JoinColumn(name = "sellerproductid", referencedColumnName = "id")
+    private List<SellerProduct> sellerProduct;
 
     private int quantity;
 }

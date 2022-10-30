@@ -21,5 +21,6 @@ public class Cart {
     private int quantity;
 
     @OneToOne
-    private AppUser userId;
+    @JoinColumn(name = "appuserid", referencedColumnName = "id")
+    private AppUser appUser;
 }
