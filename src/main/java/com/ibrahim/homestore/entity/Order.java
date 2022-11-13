@@ -24,10 +24,10 @@ public class Order {
     private BigDecimal totalPrice;
 
     @OneToOne(fetch = LAZY)
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private AppUser user;
 }
