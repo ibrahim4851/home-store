@@ -24,7 +24,7 @@ public class CartContent {
 
     @ManyToMany(fetch = EAGER)
     @JoinColumn(name = "sellerproductid", referencedColumnName = "id")
-    private List<SellerProduct> sellerProduct;
+    private List<Product> sellerProduct;
 
     private int quantity;
 }
