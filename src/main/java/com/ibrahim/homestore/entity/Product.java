@@ -21,8 +21,7 @@ public class Product {
 
     private String description;
 
-    @ElementCollection
-    private List<String> photos;
+    private String photoUrl;
 
     @ManyToOne
     private Category category;
