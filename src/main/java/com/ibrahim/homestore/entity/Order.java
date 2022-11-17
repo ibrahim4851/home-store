@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import static javax.persistence.FetchType.LAZY;
 
@@ -22,6 +23,8 @@ public class Order {
     private String status;
 
     private BigDecimal totalPrice;
+
+    private Date orderDate;
 
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "address_id", referencedColumnName = "id")

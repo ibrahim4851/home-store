@@ -28,6 +28,6 @@ public class ProductService {
         return repository.findProductsByCategoryAndSubCategoryOrderByRating(categoryId, subCategoryId);
     }
 
-
+    public List<Product> findAll(){return repository.findAll();}
 
 }
