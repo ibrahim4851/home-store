@@ -14,7 +14,7 @@ import static javax.persistence.FetchType.LAZY;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class ShopOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)

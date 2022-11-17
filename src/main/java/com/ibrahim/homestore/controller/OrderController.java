@@ -1,7 +1,7 @@
 package com.ibrahim.homestore.controller;
 
 
-import com.ibrahim.homestore.entity.Order;
+import com.ibrahim.homestore.entity.ShopOrder;
 import com.ibrahim.homestore.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("all")
-    public List<Order> getAll(){
+    public List<ShopOrder> getAll(){
         return orderService.findAll();
     }
 

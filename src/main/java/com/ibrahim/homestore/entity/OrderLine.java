@@ -12,17 +12,17 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderContent {
+public class OrderLine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @ManyToOne
-    private Order orderId;
+    private ShopOrder orderId;
 
     @ManyToMany
-    private List<SellerProduct> sellerProducts;
+    private List<Product> sellerProducts;
 
     private int quantity;
 

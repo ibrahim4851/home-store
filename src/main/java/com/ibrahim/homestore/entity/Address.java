@@ -32,6 +32,8 @@ public class Address {
 
     private String floor;
 
+    private Boolean isDefault;
+
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "appuserid", referencedColumnName = "id")
     private AppUser appUser;
