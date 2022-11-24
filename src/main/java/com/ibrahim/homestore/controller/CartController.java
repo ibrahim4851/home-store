@@ -1,4 +1,4 @@
-package com.ibrahim.homestore.service;
+package com.ibrahim.homestore.controller;
 
 import com.ibrahim.homestore.repo.CartContentRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,9 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 @Slf4j
-public class CartService {
+public class CartController {
 
-    private final CartContentRepository repository;
-
+    private final CartContentRepository cartRepository;
 
 }
