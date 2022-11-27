@@ -21,8 +21,8 @@ public class OrderLine {
     @ManyToOne
     private ShopOrder orderId;
 
-    @ManyToMany
-    private List<Product> sellerProducts;
+    @ManyToOne
+    private Product product;
 
     private int quantity;
 
